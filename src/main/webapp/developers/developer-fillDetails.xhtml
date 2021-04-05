@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:composition template="../layout.xhtml">
+
+	<ui:define name="content">
+		<div class="ui-g-6">
+		<h:form id="developerForm">
+			<p:panel header="Enter Developer Details" style="background-color: blue;">
+				<h:panelGrid columns="1"><br />
+
+					<p:outputLabel style="color: white" for="name" value="Name: " />
+					<p:inputText id="name"  value="#{addDeveloper.developerModel.name}" /><br />
+
+					<p:outputLabel style="color: white" for="email" value="Email: " />
+					<p:inputText type="email" id="email" value="#{addDeveloper.developerModel.email}" /><br />
+
+					<p:outputLabel style="color: white" for="skills"  value="Skills: " />
+					<p:selectOneMenu id="skills" value="#{addDeveloper.developerModel.skills}" >
+						<f:selectItems var="skills" itemValue = "#{skills.skill}"
+									   itemLabel = "#{skills.skill}" value="#{addDeveloper.skillsList}" />
+					</p:selectOneMenu>
+					<br />
+
+					<br />
+					<h:commandButton value="Create" action="#{addDeveloper.addNewDeveloper}" />
+
+				</h:panelGrid>
+			</p:panel>
+		</h:form>
+		</div>
+	</ui:define>
+
+
+</ui:composition>
+</html>

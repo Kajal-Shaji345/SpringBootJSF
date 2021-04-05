@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	  xmlns:p="http://primefaces.org/ui"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="../layout.xhtml">
+
+	<ui:define name="content">
+		<div class="ui-g-6">
+		<h:form id="viewDeveloperForm">
+			<p:panel header="Developer Details" style="background-color: blue; color: white;">
+				<h:panelGrid columns="1">
+					<p:outputLabel style="color: white" for="name" value="Name: " />
+					<p:inputText id="name"  value="#{viewDeveloper.developer.name}" disabled="true" /><br />
+
+					<p:outputLabel style="color: white" for="email" value="Email: " />
+					<p:inputText type="email" id="email" value="#{viewDeveloper.developer.email}" disabled="true" /> <br />
+
+					<p:outputLabel style="color: white"  value="Skills: " />
+					<p:outputLabel style="color: white; font-size: medium;" value="#{viewDeveloper.developer.skills}" /><br /><br />
+
+					<hr style="color: #ffffff"></hr><br />
+
+					<p:outputLabel style="color: white"  value="Update Skills: " />
+					<p:selectOneMenu id="skill" value="#{viewDeveloper.developer.skills}" >
+						<f:selectItems  var="skill" value = "#{viewDeveloper.skillsList}"
+										itemValue = "#{skill.skill}" itemLabel = "#{skill.skill}" />
+					</p:selectOneMenu>
+					<br />
+
+
+					<h:commandButton value="Update" action="#{viewDeveloper.updateDeveloperSkills}" />
+
+				</h:panelGrid>
+			</p:panel>
+		</h:form>
+		</div>
+	</ui:define>
+
+</ui:composition>
+</html>

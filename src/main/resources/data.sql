@@ -1,0 +1,14 @@
+DROP TABLE IF EXISTS SKILL_SET_ENTITY;
+
+CREATE TABLE SKILL_SET_ENTITY (
+   id INT AUTO_INCREMENT  PRIMARY KEY,
+   skill VARCHAR(250),
+);
+
+INSERT into SKILL_SET_ENTITY(id, skill) VALUES (1, 'Core Java');
+INSERT into SKILL_SET_ENTITY(id, skill) VALUES (2, 'Advance Java');
+INSERT into SKILL_SET_ENTITY(id, skill) VALUES (3, 'Spring Boot');
+INSERT into SKILL_SET_ENTITY(id, skill) VALUES (4, 'React JS');
+INSERT into SKILL_SET_ENTITY(id, skill) VALUES (5, 'Angular JS');
+INSERT into SKILL_SET_ENTITY(id, skill) VALUES (6, 'PHP');
+
